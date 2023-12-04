@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex Color Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @font-face {
+        font-family: Nexa;
+        src: url('fonts/NexaBlack.otf');
+        font-weight: normal;
+      }
+      @font-face {
+        font-family: Nexa;
+        src: url('fonts/NexaLight.otf');
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: Nexa;
+        src: url('fonts/NexaBold.otf');
+        font-weight: bold;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: Nexa;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="bg"
+      class="w-full h-full bg-indigo-600 flex items-center justify-center">
+      <div
+        class="bg-white w-full max-w-[500px] h-[300px] rounded-lg p-5 flex gap-10 items-center">
+        <div class="flex flex-col flex-1 h-full">
+          <p class="font-bold border-b pb-2 text-2xl leading-6">
+            HEX COLOR APPLICATION
+          </p>
+          <div class="mt-7 flex items-center gap-2">
+            <p>Pick a color:</p>
+            <input
+              type="color"
+              oninput="color.textContent = this.value; bg.style.backgroundColor=this.value" />
+          </div>
+          <div class="flex items-center gap-3 mt-3">
+            <p>Color:</p>
+            <p id="color" class="font-bold">#324fd</p>
+          </div>
+          <button
+            onclick="navigator.clipboard.writeText(color.textContent)"
+            class="mt-auto py-1 px-3 rounded-lg bg-gradient-to-bl from-pink-600 to-indigo-500 text-white cursor-pointer active:scale-95 transition">
+            Copy
+          </button>
+        </div>
+        <img src="palette.svg" alt="palette" class="h-[70%] w-[50%]" />
+      </div>
+    </div>
+  </body>
+</html>
