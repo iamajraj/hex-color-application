@@ -38,22 +38,23 @@
       <div
         class="bg-white w-full max-w-[500px] h-[300px] rounded-lg p-5 flex gap-10 items-center">
         <div class="flex flex-col flex-1 h-full">
-          <p class="font-bold border-b pb-2 text-2xl leading-6">
+          <h1 class="font-bold border-b pb-2 text-2xl leading-6">
             HEX COLOR APPLICATION
-          </p>
+          </h1>
           <div class="mt-7 flex items-center gap-2">
-            <p>Pick a color:</p>
+            <label for="colorpicker" class="font-medium">Pick a color:</label>
             <input
               type="color"
+              id="colorpicker"
               oninput="color.textContent = this.value; bg.style.backgroundColor=this.value" />
           </div>
           <div class="flex items-center gap-3 mt-3">
-            <p>Color:</p>
+            <p class="font-medium">Color:</p>
             <p id="color" class="font-bold">#324fd</p>
           </div>
           <button
             onclick="navigator.clipboard.writeText(color.textContent)"
-            class="mt-auto py-1 px-3 rounded-lg bg-gradient-to-bl from-pink-600 to-indigo-500 text-white cursor-pointer active:scale-95 transition">
+            class="mt-auto py-1 px-3 rounded-lg bg-gradient-to-bl from-pink-600 to-indigo-500 text-white font-semibold cursor-pointer active:scale-95 transition">
             Copy
           </button>
         </div>
